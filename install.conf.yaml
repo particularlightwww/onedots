@@ -1,0 +1,24 @@
+- clean: ['~']
+
+- link:
+    ~/.zshrc: zshrc
+    ~/.aliasrc: aliasrc
+    ~/.Xresources: Xresources
+    ~/.xinitrc: xinitrc
+    ~/.config/dunst/dunstrc: dunstrc
+    ~/build/dmenu: dmenu/
+    ~/.config/aria2/aria2.conf: aria2.conf
+    ~/.themes/onedark: onedark/
+    ~/.config/ranger: ranger/
+    ~/.config/gtk-3.0: gtk-3.0/
+    ~/.config/nitrogen: nitrogen/
+- create:
+    - ~/dwn
+    - ~/media
+    - ~/media/img
+    - ~/media/img/shots
+    - ~/media/img/wal
+    - ~/media/mus
+    - ~/media/vid
+    - ~/etc
+

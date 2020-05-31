@@ -1,0 +1,97 @@
+#define FOREGROUND #ABB2BF
+#define BACKGROUND #222222
+
+#define COLOR0  #1f2024
+#define COLOR8  #4B5263
+#define COLOR1  #E06C75
+#define COLOR9  #BE5046
+#define COLOR2  #98C379
+#define COLOR10 #98C379
+#define COLOR3  #E5C07B
+#define COLOR11 #D19A66
+#define COLOR4  #61AFEF
+#define COLOR12 #61AFEF
+#define COLOR5  #C678DD
+#define COLOR13 #C678DD
+#define COLOR6  #56B6C2 
+#define COLOR14 #56B6C2 
+#define COLOR7  #ABB2BF
+#define COLOR15 #ABB2BF
+
+
+dmenu.background : BACKGROUND
+dmenu.foreground : FOREGROUND
+dmenu.selbackground : FOREGROUND
+dmenu.selforeground : BACKGROUND
+
+dwm.normbordercolor: #383838
+dwm.normbgcolor: BACKGROUND
+dwm.normfgcolor: #7f8287
+dwm.selbordercolor: FOREGROUND
+dwm.selbgcolor: BACKGROUND
+dwm.selfgcolor: FOREGROUND
+
+Sxiv.foreground: FOREGROUND
+Sxiv.background: BACKGROUND
+*.foreground:    FOREGROUND
+*.background:    BACKGROUND
+
+
+! Negro y gris
+*.color0:        COLOR0
+*.color8:        COLOR8
+! Rojos
+*.color1:        COLOR1
+*.color9:        COLOR9
+! Verde
+*.color2:        COLOR2
+*.color10:       COLOR10
+! Amarillo
+*.color3:        COLOR3
+*.color11:       COLOR11
+! Azul
+*.color4:        COLOR4
+*.color12:       COLOR12
+! Magenta
+*.color5:        COLOR5
+*.color13:       COLOR13
+! Cyan
+*.color6:        COLOR6
+*.color14:       COLOR14
+! Blanco
+*.color7:        COLOR7
+*.color15:       COLOR15
+
+
+Xft.autohint: 0
+Xft.lcdfilter:  lcddefault
+Xft.hintstyle:  hintfull
+Xft.hinting: 1
+Xft.antialias: 1
+Xft.rgba: none
+XTerm.termName: xterm-256color
+XTerm.vt100.locale: true
+XTerm.vt100.faceName: Hack:size=12:antialias=true
+xterm*VT100.Translations: #override \n\
+                 Ctrl <Key> minus: smaller-vt-font() \n\
+                 Ctrl <Key> plus: larger-vt-font() \n\
+                 Ctrl Shift <Key>V:    insert-selection(CLIPBOARD) \n\
+                 Ctrl Shift <Key>C:    copy-selection(CLIPBOARD)
+XTerm*internalBorder: 16
+XTerm*pointerColor: white
+XTerm*pointerColorBackground: black
+XTerm*cursorColor: white
+XTerm*cursorBlink: true
+! Only select text
+XTerm*highlightSelection: true
+! Remove trailing spaces
+XTerm*trimSelection: true
+XTerm*saveLines: 16384
+XTerm*scrollTtyOutput: false
+XTerm*selectToClipboard: true
+XTerm*fullscreen: never
+XTerm.vt100.backarrowKey: false
+XTerm.ttyModes: erase ^?
+! double-click to select whole URLs :D
+! https://scarygliders.net/2011/12/01/customize-xterm-the-original-and-best-terminal/
+XTerm*charClass: 33:48,36-47:48,58-59:48,61:48,63-64:48,95:48,126:48
