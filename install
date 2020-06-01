@@ -1,9 +1,12 @@
 #!/usr/bin/env bash
-
+echo "Creating needed directories"
 mkdir ~/build
 mkdir ~/.themes
 mkdir ~/.config/dunst
-sudo apt install -y neovim ranger xfonts-terminus zsh xterm fonts-hack-ttf libx11-dev libxft-dev libxinerama-dev udiskie udisks2 dunst sxiv zathura zathura-djvu zathura-pdf-poppler mpv atool tar unrar unzip mediainfo python3 ffmpegthumbnailer highlight w3m
+echo "Installing packages"
+sudo apt install -y neovim imagemagick ranger xfonts-terminus zsh xterm fonts-hack-ttf libx11-dev libxft-dev libxinerama-dev udiskie udisks2 dunst sxiv zathura zathura-djvu zathura-pdf-poppler mpv atool tar unrar unzip mediainfo python3 ffmpegthumbnailer highlight w3m
+chsh -s $(which zsh)
+echo "Setup dotfiles"
 set -e
 
 CONFIG="install.conf.yaml"
@@ -17,7 +20,12 @@ git -C "${DOTBOT_DIR}" submodule sync --quiet --recursive
 git submodule update --init --recursive "${DOTBOT_DIR}"
 
 "${BASEDIR}/${DOTBOT_DIR}/${DOTBOT_BIN}" -d "${BASEDIR}" -c "${CONFIG}" "${@}"
-
+echo "Installing siji font"
+rm /etc/fonts/conf.d/70-no-bitmaps.conf
+cd ~/build && git clone https://github.com/stark/siji && cd siji
+./install.sh
+echo "Install suckless tools"
 cd ~/build/dwm && sudo make && sudo make install
 cd ~/build/dmenu && sudo make && sudo make install
 cd ~/build/slstatus && sudo make && sudo make install
+

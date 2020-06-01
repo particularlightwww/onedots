@@ -15,6 +15,7 @@
     ~/.config/gtk-3.0: gtk-3.0/
     ~/.config/nitrogen: nitrogen/
     ~/.config/nvim: nvim/
+    ~/scripts: scripts/
 - create:
     - ~/build
     - ~/dwn
