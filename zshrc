@@ -1,4 +1,4 @@
-source ~/.zsh/.aliasrc
+source ~/.aliasrc
 PROMPT='%(?.%F{green}%T.%F{red}%T)%f %B%F{white}%1~%f%b » ' 
 TIMEFMT=$'\n================\nCPU\t%P\nuser\t%*U\nsystem\t%*S\ntotal\t%*E'
 # Lines configured by zsh-newuser-install

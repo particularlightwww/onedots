@@ -10,7 +10,7 @@ static const unsigned int gappiv    = 0;       /* vert inner gap between windows
 static const unsigned int gappoh    = 0;       /* horiz outer gap between windows and screen edge */
 static const unsigned int gappov    = 0;       /* vert outer gap between windows and screen edge */
 static const int smartgaps          = 1;        /* 1 means no outer gap when there is only one window */
-static const char *fonts[]          = { "Terminus:size=10",
+static const char *fonts[]          = { "Terminus:size=8",
 "Siji:size=10"};
 static const char dmenufont[]       = "Terminus:size=10";
 static char normbgcolor[]           = "#222222";
@@ -33,10 +33,11 @@ static const Rule rules[] = {
 	 *	WM_CLASS(STRING) = instance, class
 	 *	WM_NAME(STRING) = title
 	 */
-	/* class      instance    title       tags mask     isfloating   monitor */
-	{ "Gimp",     NULL,       NULL,       0,            1,           -1 },
-	{ "Firefox",  NULL,       NULL,       0,       0,           -1 },
+/* class      instance    title       tags mask     iscentered   isfloating   monitor */
+ { "Gimp",     NULL,       NULL,       0,            0,           1,           -1 },
+ { "Firefox",  NULL,       NULL,       0,       0,           0,           -1 },
 };
+
 
 /* layout(s) */
 static const float mfact     = 0.55; /* factor of master area size [0.05..0.95] */
@@ -93,20 +94,21 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_comma,  tagmon,         {.i = -1 } },
 	{ MODKEY|ShiftMask,             XK_period, tagmon,         {.i = +1 } },
 	{ MODKEY,                       XK_F5,     xrdb,           {.v = NULL } },
-        { Mod1Mask,                     XK_h,      incrgaps,       {.i = +5 } },
-        { Mod1Mask,                     XK_l,      incrgaps,       {.i = -5 } },
-        { Mod1Mask,                     XK_d,      defaultgaps,    {0} },
+    { Mod1Mask,                     XK_h,      incrgaps,       {.i = +5 } },
+    { Mod1Mask,                     XK_l,      incrgaps,       {.i = -5 } },
+    { Mod1Mask,                     XK_d,      defaultgaps,    {0} },
 	{ 0,                       XF86XK_AudioLowerVolume, spawn,   SHCMD("exec amixer set Master 5%-")},
 	{ 0,                       XF86XK_AudioMute, spawn,   	     SHCMD("exec amixer set Master toggle") },
 	{ 0,                       XF86XK_AudioRaiseVolume, spawn,   SHCMD("exec amixer set Master 5%+") },
 	{ 0,                       XK_Print,       spawn,   SHCMD("exec ~/scripts/dmenu_scripts/shots.sh") },
+	{ MODKEY,                       XK_s,       spawn,   SHCMD("exec xterm -e ./scripts/pulsemixer") },
   	{ MODKEY|ShiftMask,             XK_h,      setcfact,       {.f = +0.25} },
   	{ MODKEY|ShiftMask,             XK_l,      setcfact,       {.f = -0.25} },
   	{ MODKEY|ShiftMask,             XK_o,      setcfact,       {.f =  0.00} },
-        {MODKEY,      XK_o,     hidewin,     {0}},
-        {MODKEY|ShiftMask,        XK_o,     restorewin,     {0}},
-        {MODKEY,       XK_w,     hideotherwins,  {0}},
-        {MODKEY|ShiftMask,     XK_w,     restoreotherwins, {0}},
+    {MODKEY,      XK_o,     hidewin,     {0}},
+    {MODKEY|ShiftMask,        XK_o,     restorewin,     {0}},
+    {MODKEY,       XK_w,     hideotherwins,  {0}},
+    {MODKEY|ShiftMask,     XK_w,     restoreotherwins, {0}},
 	TAGKEYS(                        XK_1,                      0)
 	TAGKEYS(                        XK_2,                      1)
 	TAGKEYS(                        XK_3,                      2)

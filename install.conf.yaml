@@ -7,12 +7,16 @@
     ~/.xinitrc: xinitrc
     ~/.config/dunst/dunstrc: dunstrc
     ~/build/dmenu: dmenu/
+    ~/build/dwm: dwm/
     ~/.config/aria2/aria2.conf: aria2.conf
+    ~/build/slstatus: slstatus
     ~/.themes/onedark: onedark/
     ~/.config/ranger: ranger/
     ~/.config/gtk-3.0: gtk-3.0/
     ~/.config/nitrogen: nitrogen/
+    ~/.config/nvim: nvim/
 - create:
+    - ~/build
     - ~/dwn
     - ~/media
     - ~/media/img

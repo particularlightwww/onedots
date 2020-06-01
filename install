@@ -1,5 +1,9 @@
 #!/usr/bin/env bash
 
+mkdir ~/build
+mkdir ~/.themes
+mkdir ~/.config/dunst
+sudo apt install -y neovim ranger xfonts-terminus zsh xterm fonts-hack-ttf libx11-dev libxft-dev libxinerama-dev udiskie udisks2 dunst sxiv zathura zathura-djvu zathura-pdf-poppler mpv atool tar unrar unzip mediainfo python3 ffmpegthumbnailer highlight w3m
 set -e
 
 CONFIG="install.conf.yaml"
@@ -13,3 +17,7 @@ git -C "${DOTBOT_DIR}" submodule sync --quiet --recursive
 git submodule update --init --recursive "${DOTBOT_DIR}"
 
 "${BASEDIR}/${DOTBOT_DIR}/${DOTBOT_BIN}" -d "${BASEDIR}" -c "${CONFIG}" "${@}"
+
+cd ~/build/dwm && sudo make && sudo make install
+cd ~/build/dmenu && sudo make && sudo make install
+cd ~/build/slstatus && sudo make && sudo make install
