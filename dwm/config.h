@@ -10,9 +10,9 @@ static const unsigned int gappiv    = 0;       /* vert inner gap between windows
 static const unsigned int gappoh    = 0;       /* horiz outer gap between windows and screen edge */
 static const unsigned int gappov    = 0;       /* vert outer gap between windows and screen edge */
 static const int smartgaps          = 1;        /* 1 means no outer gap when there is only one window */
-static const char *fonts[]          = { "Terminus:size=8",
+static const char *fonts[]          = { "Hack:size=9",
 "Siji:size=10"};
-static const char dmenufont[]       = "Terminus:size=10";
+static const char dmenufont[]       = "Hack:size=10";
 static char normbgcolor[]           = "#222222";
 static char normbordercolor[]       = "#444444";
 static char normfgcolor[]           = "#bbbbbb";
@@ -97,9 +97,9 @@ static Key keys[] = {
     { Mod1Mask,                     XK_h,      incrgaps,       {.i = +5 } },
     { Mod1Mask,                     XK_l,      incrgaps,       {.i = -5 } },
     { Mod1Mask,                     XK_d,      defaultgaps,    {0} },
-	{ 0,                       XF86XK_AudioLowerVolume, spawn,   SHCMD("exec amixer set Master 5%-")},
-	{ 0,                       XF86XK_AudioMute, spawn,   	     SHCMD("exec amixer set Master toggle") },
-	{ 0,                       XF86XK_AudioRaiseVolume, spawn,   SHCMD("exec amixer set Master 5%+") },
+	{ 0,                       XF86XK_AudioLowerVolume, spawn,   SHCMD("exec ~/scripts/volume.sh down")},
+	{ 0,                       XF86XK_AudioMute, spawn,   	     SHCMD("exec ~/scripts/volume.sh mute") },
+	{ 0,                       XF86XK_AudioRaiseVolume, spawn,   SHCMD("exec ~/scripts/volume.sh up") },
 	{ 0,                       XK_Print,       spawn,   SHCMD("exec ~/scripts/dmenu_scripts/shots.sh") },
 	{ MODKEY,                       XK_s,       spawn,   SHCMD("exec xterm -e ./scripts/pulsemixer") },
   	{ MODKEY|ShiftMask,             XK_h,      setcfact,       {.f = +0.25} },

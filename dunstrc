@@ -10,7 +10,7 @@ horizontal_padding = 16
 frame_width = 2
 sort = no
 idle_threshold = 120
-font = Terminus 8
+font = Hack 9
 line_height = 4
 markup = full
 format = "<b>%s</b>\n%b"
@@ -28,7 +28,7 @@ browser = /usr/bin/firefox -new-tab
 always_run_script = true
 title = Dunst
 class = Dunst
-
+icon_path = /usr/share/icons/Papirus-Dark/16x16/status/:/usr/share/icons/Papirus-Dark/16x16/devices/
 [shortcuts]
 close = ctrl+space
 close_all = ctrl+shift+space
